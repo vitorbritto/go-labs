@@ -4,9 +4,9 @@ Go é uma linguagem de programação compilada, estaticamente tipada, com sintax
 
 ## Variáveis
 
-- Funções privadas, protegidas e públicas são diferenciadas pela primeira letra:
-- Maiúscula: Função pública.
-- Minúscula: Função privada.
+- Variáveis são espaços na memória do computador que armazenam valores.
+- Variáveis são criadas com o operador `:=`.
+- Variáveis são destruídas quando saem do escopo.
 
 ## Dependências
 
@@ -38,6 +38,9 @@ Go é uma linguagem de programação compilada, estaticamente tipada, com sintax
 ## Funções
 
 - Criar blocos reutilizáveis de código.
+- Funções privadas, protegidas e públicas são diferenciadas pela primeira letra:
+  - Maiúscula: Função pública.
+  - Minúscula: Função privada.
 
 ### Função Anônima
 
