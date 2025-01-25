@@ -142,42 +142,61 @@ Go é uma linguagem de programação compilada, estaticamente tipada, com sintax
 - É uma forma de garantir que um tipo implementa um conjunto de métodos.
 - Estabelece um contrato.
 
-### Concorrência
+## Concorrência vs Paralelismo
 
-- É a capacidade de um programa executar várias tarefas ao mesmo tempo.
-- É usado para executar várias tarefas ao mesmo tempo.
+- Concorrência: É a capacidade de um programa executar várias tarefas ao mesmo tempo em um único processador. As tarefas revezam a execução.
+- Paralelismo: É a capacidade de um programa executar várias tarefas ao mesmo tempo em diferentes processadores. As tarefas são executadas simultaneamente.
 
-### Canais
+### Conceitos
+
+- **Goroutine:** É uma pequena rotina leve que é executada em paralelo com o programa principal.
+- **Channel:** É uma forma de comunicação entre goroutines.
+- **Mutex:** É uma forma de proteger um recurso compartilhado por múltiplas goroutines.
+- **Context:** É uma forma de gerenciar requisições e respostas HTTP.
+
+#### Go Routines
+
+- Go Routines são pequenas rotinas leves que são executadas em paralelo com o programa principal.
+- Go Routines são usadas para executar várias tarefas ao mesmo tempo.
+
+#### WaitGroup
+
+- WaitGroup é uma estrutura de controle que permite esperar por múltiplas goroutines.
+- WaitGroup é usado para esperar por múltiplas goroutines.
+
+#### Canais
 
 - Canais são uma forma de comunicação entre goroutines.
 - Canais são usados para enviar e receber valores entre goroutines.
 - Canais são criados com a função `make`.
 - Canais são fechados com a função `close`.
+- **Deadlock:** É um erro que ocorre quando uma goroutine espera por um canal que nunca será enviado. Só ocorre durante a execução do programa. Na compilação não é possível detectar um deadlock.
+- Utilizar canais em funções diferentes ou usar com Buffer.
 
-### Select
+#### Select
 
 - Select é uma estrutura de controle que permite esperar múltiplos canais.
 - Select é usado para esperar múltiplos canais.
 
-### WaitGroup
-
-- WaitGroup é uma estrutura de controle que permite esperar por múltiplas goroutines.
-- WaitGroup é usado para esperar por múltiplas goroutines.
-
-### Mutex
-
-- Mutex é uma estrutura de controle que permite proteger um recurso compartilhado por múltiplas goroutines.
-- Mutex é usado para proteger um recurso compartilhado por múltiplas goroutines.
-
-### Context
-
-- Context é uma estrutura de controle que permite gerenciar requisições e respostas HTTP.
-- Context é usado para gerenciar requisições e respostas HTTP.
-
-### Goroutines
+#### Goroutines
 
 - Goroutines são pequenas rotinas leves que são executadas em paralelo com o programa principal.
 - Goroutines são usadas para executar várias tarefas ao mesmo tempo.
+
+### Patterns
+
+#### Worker Pools
+
+- Worker Pools é uma padrão de concorrência útil para lidar com a execução de uma fila de tarefas.
+- Cada tarefa é executada por um worker.
+
+#### Generators
+
+- Generator é uma função que encapsula uma goroutine e um canal.
+
+#### Multiplexing
+
+- Multiplexing é uma técnica que permite executar várias tarefas ao mesmo tempo.
 
 ---
 
@@ -189,6 +208,7 @@ Go é uma linguagem de programação compilada, estaticamente tipada, com sintax
 - Não existem operadores ternários em Go.
 - Sempre utilizar diretórios para organizar o projeto.
 - Evitar o uso de interfaces genéricas.
+- Sempre fechar um `channel` quando não for mais necessário.
 
 ## Benefícios
 
