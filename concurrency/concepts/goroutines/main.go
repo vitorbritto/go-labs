@@ -6,8 +6,9 @@ import (
 )
 
 func main() {
-	go sayHello("Hello!")
-	sayHello("Hello, world!")
+	go sayHello("Sending message from Batch 01")
+	go sayHello("Sending message from Batch 02")
+	sayHello("Sending message from Batch 03")
 }
 
 func sayHello(msg string) {
